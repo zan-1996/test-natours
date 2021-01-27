@@ -1,0 +1,111 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        
+        border-radius: 20rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+        transition: 0.2s;
+        display: inline-block;
+        position: relative;
+
+        //Change for <button> elements
+        border: none;
+        cursor: pointer;
+
+
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 2rem 4rem rgba($color-black,0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }    
+        
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+        
+    }
+
+    &::after {
+        content: "";
+        background-color: $color-white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 20rem;
+        z-index: -1;
+        transition: 0.2s;
+    }
+
+
+    &--white{ 
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+
+    }
+
+    &--green { 
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
+    &--animated {
+        animation: moveInBottom 1s .75s;
+        animation-fill-mode: backwards;
+    }
+    
+    &--text {
+
+        &:link,
+        &:visited {
+        text-decoration: none;
+        color: $color-primary;
+        border-bottom: 1px solid;
+        padding-bottom: .5rem;  
+        transition: .2s;  
+        padding: .5rem;   
+        display: inline-block;     
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+            background-color: $color-primary;   
+            color: $color-white;  
+            border-bottom: none;      
+        }
+
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 .5rem 1rem rgba($color-black,0.2);           
+        }
+
+
+
+    }
+
+}
+
+
+
